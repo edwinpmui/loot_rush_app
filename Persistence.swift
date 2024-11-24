@@ -2,7 +2,7 @@
 //  Persistence.swift
 //  Loot Rush
 //
-//  Created by user268667 on 11/21/24.
+//  Created by David Fu on 11/21/24.
 //
 
 import CoreData
@@ -10,8 +10,7 @@ import CoreData
 struct PersistenceController {
     static let shared = PersistenceController()
 
-    @MainActor
-    static let preview: PersistenceController = {
+    static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {

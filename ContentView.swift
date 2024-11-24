@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Loot Rush
 //
-//  Created by user268667 on 11/21/24.
+//  Created by David Fu on 11/21/24.
 //
 
 import SwiftUI
@@ -29,11 +29,9 @@ struct ContentView: View {
                 .onDelete(perform: deleteItems)
             }
             .toolbar {
-#if os(iOS)
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
-#endif
                 ToolbarItem {
                     Button(action: addItem) {
                         Label("Add Item", systemImage: "plus")

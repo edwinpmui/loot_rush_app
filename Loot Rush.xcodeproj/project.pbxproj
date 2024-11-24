@@ -3,66 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		3E8E31C42CF010EF00DFA1E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E8E31A52CF010EE00DFA1E1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3E8E31AC2CF010EE00DFA1E1;
-			remoteInfo = "Loot Rush";
-		};
-		3E8E31CE2CF010EF00DFA1E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E8E31A52CF010EE00DFA1E1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3E8E31AC2CF010EE00DFA1E1;
-			remoteInfo = "Loot Rush";
-		};
-/* End PBXContainerItemProxy section */
+/* Begin PBXBuildFile section */
+		247D1AE42CF015660052E737 /* Loot_RushApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D1AE32CF015660052E737 /* Loot_RushApp.swift */; };
+		247D1AE62CF015660052E737 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D1AE52CF015660052E737 /* ContentView.swift */; };
+		247D1AE82CF0156B0052E737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247D1AE72CF0156B0052E737 /* Assets.xcassets */; };
+		247D1AEB2CF0156B0052E737 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247D1AEA2CF0156B0052E737 /* Preview Assets.xcassets */; };
+		247D1AED2CF0156B0052E737 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D1AEC2CF0156B0052E737 /* Persistence.swift */; };
+		247D1AF02CF0156B0052E737 /* Loot_Rush.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 247D1AEE2CF0156B0052E737 /* Loot_Rush.xcdatamodeld */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3E8E31AD2CF010EE00DFA1E1 /* Loot Rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loot Rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E8E31C32CF010EF00DFA1E1 /* Loot RushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Loot RushTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E8E31CD2CF010EF00DFA1E1 /* Loot RushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Loot RushUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		247D1AE02CF015660052E737 /* Loot Rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loot Rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		247D1AE32CF015660052E737 /* Loot_RushApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loot_RushApp.swift; sourceTree = "<group>"; };
+		247D1AE52CF015660052E737 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		247D1AE72CF0156B0052E737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		247D1AEA2CF0156B0052E737 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		247D1AEC2CF0156B0052E737 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		247D1AEF2CF0156B0052E737 /* Loot_Rush.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Loot_Rush.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		3E8E31AF2CF010EE00DFA1E1 /* Loot Rush */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Loot Rush";
-			sourceTree = "<group>";
-		};
-		3E8E31C62CF010EF00DFA1E1 /* Loot RushTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Loot RushTests";
-			sourceTree = "<group>";
-		};
-		3E8E31D02CF010EF00DFA1E1 /* Loot RushUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Loot RushUITests";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
-		3E8E31AA2CF010EE00DFA1E1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E8E31C02CF010EF00DFA1E1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E8E31CA2CF010EF00DFA1E1 /* Frameworks */ = {
+		247D1ADD2CF015660052E737 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,204 +36,124 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3E8E31A42CF010EE00DFA1E1 = {
+		247D1AD72CF015660052E737 = {
 			isa = PBXGroup;
 			children = (
-				3E8E31AF2CF010EE00DFA1E1 /* Loot Rush */,
-				3E8E31C62CF010EF00DFA1E1 /* Loot RushTests */,
-				3E8E31D02CF010EF00DFA1E1 /* Loot RushUITests */,
-				3E8E31AE2CF010EE00DFA1E1 /* Products */,
+				247D1AE22CF015660052E737 /* Loot Rush */,
+				247D1AE12CF015660052E737 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3E8E31AE2CF010EE00DFA1E1 /* Products */ = {
+		247D1AE12CF015660052E737 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E8E31AD2CF010EE00DFA1E1 /* Loot Rush.app */,
-				3E8E31C32CF010EF00DFA1E1 /* Loot RushTests.xctest */,
-				3E8E31CD2CF010EF00DFA1E1 /* Loot RushUITests.xctest */,
+				247D1AE02CF015660052E737 /* Loot Rush.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		247D1AE22CF015660052E737 /* Loot Rush */ = {
+			isa = PBXGroup;
+			children = (
+				247D1AE32CF015660052E737 /* Loot_RushApp.swift */,
+				247D1AE52CF015660052E737 /* ContentView.swift */,
+				247D1AE72CF0156B0052E737 /* Assets.xcassets */,
+				247D1AEC2CF0156B0052E737 /* Persistence.swift */,
+				247D1AEE2CF0156B0052E737 /* Loot_Rush.xcdatamodeld */,
+				247D1AE92CF0156B0052E737 /* Preview Content */,
+			);
+			path = "Loot Rush";
+			sourceTree = "<group>";
+		};
+		247D1AE92CF0156B0052E737 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				247D1AEA2CF0156B0052E737 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3E8E31AC2CF010EE00DFA1E1 /* Loot Rush */ = {
+		247D1ADF2CF015660052E737 /* Loot Rush */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E8E31D72CF010EF00DFA1E1 /* Build configuration list for PBXNativeTarget "Loot Rush" */;
+			buildConfigurationList = 247D1AF32CF0156C0052E737 /* Build configuration list for PBXNativeTarget "Loot Rush" */;
 			buildPhases = (
-				3E8E31A92CF010EE00DFA1E1 /* Sources */,
-				3E8E31AA2CF010EE00DFA1E1 /* Frameworks */,
-				3E8E31AB2CF010EE00DFA1E1 /* Resources */,
+				247D1ADC2CF015660052E737 /* Sources */,
+				247D1ADD2CF015660052E737 /* Frameworks */,
+				247D1ADE2CF015660052E737 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				3E8E31AF2CF010EE00DFA1E1 /* Loot Rush */,
 			);
 			name = "Loot Rush";
-			packageProductDependencies = (
-			);
 			productName = "Loot Rush";
-			productReference = 3E8E31AD2CF010EE00DFA1E1 /* Loot Rush.app */;
+			productReference = 247D1AE02CF015660052E737 /* Loot Rush.app */;
 			productType = "com.apple.product-type.application";
-		};
-		3E8E31C22CF010EF00DFA1E1 /* Loot RushTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3E8E31DA2CF010EF00DFA1E1 /* Build configuration list for PBXNativeTarget "Loot RushTests" */;
-			buildPhases = (
-				3E8E31BF2CF010EF00DFA1E1 /* Sources */,
-				3E8E31C02CF010EF00DFA1E1 /* Frameworks */,
-				3E8E31C12CF010EF00DFA1E1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3E8E31C52CF010EF00DFA1E1 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				3E8E31C62CF010EF00DFA1E1 /* Loot RushTests */,
-			);
-			name = "Loot RushTests";
-			packageProductDependencies = (
-			);
-			productName = "Loot RushTests";
-			productReference = 3E8E31C32CF010EF00DFA1E1 /* Loot RushTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		3E8E31CC2CF010EF00DFA1E1 /* Loot RushUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3E8E31DD2CF010EF00DFA1E1 /* Build configuration list for PBXNativeTarget "Loot RushUITests" */;
-			buildPhases = (
-				3E8E31C92CF010EF00DFA1E1 /* Sources */,
-				3E8E31CA2CF010EF00DFA1E1 /* Frameworks */,
-				3E8E31CB2CF010EF00DFA1E1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3E8E31CF2CF010EF00DFA1E1 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				3E8E31D02CF010EF00DFA1E1 /* Loot RushUITests */,
-			);
-			name = "Loot RushUITests";
-			packageProductDependencies = (
-			);
-			productName = "Loot RushUITests";
-			productReference = 3E8E31CD2CF010EF00DFA1E1 /* Loot RushUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3E8E31A52CF010EE00DFA1E1 /* Project object */ = {
+		247D1AD82CF015660052E737 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1610;
-				LastUpgradeCheck = 1610;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					3E8E31AC2CF010EE00DFA1E1 = {
-						CreatedOnToolsVersion = 16.1;
-					};
-					3E8E31C22CF010EF00DFA1E1 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = 3E8E31AC2CF010EE00DFA1E1;
-					};
-					3E8E31CC2CF010EF00DFA1E1 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = 3E8E31AC2CF010EE00DFA1E1;
+					247D1ADF2CF015660052E737 = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
-			buildConfigurationList = 3E8E31A82CF010EE00DFA1E1 /* Build configuration list for PBXProject "Loot Rush" */;
+			buildConfigurationList = 247D1ADB2CF015660052E737 /* Build configuration list for PBXProject "Loot Rush" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 3E8E31A42CF010EE00DFA1E1;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
-			productRefGroup = 3E8E31AE2CF010EE00DFA1E1 /* Products */;
+			mainGroup = 247D1AD72CF015660052E737;
+			productRefGroup = 247D1AE12CF015660052E737 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3E8E31AC2CF010EE00DFA1E1 /* Loot Rush */,
-				3E8E31C22CF010EF00DFA1E1 /* Loot RushTests */,
-				3E8E31CC2CF010EF00DFA1E1 /* Loot RushUITests */,
+				247D1ADF2CF015660052E737 /* Loot Rush */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3E8E31AB2CF010EE00DFA1E1 /* Resources */ = {
+		247D1ADE2CF015660052E737 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E8E31C12CF010EF00DFA1E1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E8E31CB2CF010EF00DFA1E1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				247D1AEB2CF0156B0052E737 /* Preview Assets.xcassets in Resources */,
+				247D1AE82CF0156B0052E737 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3E8E31A92CF010EE00DFA1E1 /* Sources */ = {
+		247D1ADC2CF015660052E737 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E8E31BF2CF010EF00DFA1E1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E8E31C92CF010EF00DFA1E1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				247D1AED2CF0156B0052E737 /* Persistence.swift in Sources */,
+				247D1AF02CF0156B0052E737 /* Loot_Rush.xcdatamodeld in Sources */,
+				247D1AE62CF015660052E737 /* ContentView.swift in Sources */,
+				247D1AE42CF015660052E737 /* Loot_RushApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		3E8E31C52CF010EF00DFA1E1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3E8E31AC2CF010EE00DFA1E1 /* Loot Rush */;
-			targetProxy = 3E8E31C42CF010EF00DFA1E1 /* PBXContainerItemProxy */;
-		};
-		3E8E31CF2CF010EF00DFA1E1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3E8E31AC2CF010EE00DFA1E1 /* Loot Rush */;
-			targetProxy = 3E8E31CE2CF010EF00DFA1E1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		3E8E31D52CF010EF00DFA1E1 /* Debug */ = {
+		247D1AF12CF0156C0052E737 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -321,16 +205,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		3E8E31D62CF010EF00DFA1E1 /* Release */ = {
+		247D1AF22CF0156C0052E737 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -376,213 +262,109 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		3E8E31D82CF010EF00DFA1E1 /* Debug */ = {
+		247D1AF42CF0156C0052E737 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Loot Rush/Loot_Rush.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Loot Rush/Preview Content\"";
+				DEVELOPMENT_TEAM = 3Q5W432BWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "cis1951.chrizz.Loot-Rush";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.sas.upenn.cis1951.Loot-Rush";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		3E8E31D92CF010EF00DFA1E1 /* Release */ = {
+		247D1AF52CF0156C0052E737 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Loot Rush/Loot_Rush.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Loot Rush/Preview Content\"";
+				DEVELOPMENT_TEAM = 3Q5W432BWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "cis1951.chrizz.Loot-Rush";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.sas.upenn.cis1951.Loot-Rush";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.1;
-			};
-			name = Release;
-		};
-		3E8E31DB2CF010EF00DFA1E1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MACOSX_DEPLOYMENT_TARGET = 14.7;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "cis1951.chrizz.Loot-RushTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Loot Rush.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Loot Rush";
-				XROS_DEPLOYMENT_TARGET = 2.1;
-			};
-			name = Debug;
-		};
-		3E8E31DC2CF010EF00DFA1E1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MACOSX_DEPLOYMENT_TARGET = 14.7;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "cis1951.chrizz.Loot-RushTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Loot Rush.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Loot Rush";
-				XROS_DEPLOYMENT_TARGET = 2.1;
-			};
-			name = Release;
-		};
-		3E8E31DE2CF010EF00DFA1E1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MACOSX_DEPLOYMENT_TARGET = 14.7;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "cis1951.chrizz.Loot-RushUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = "Loot Rush";
-				XROS_DEPLOYMENT_TARGET = 2.1;
-			};
-			name = Debug;
-		};
-		3E8E31DF2CF010EF00DFA1E1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MACOSX_DEPLOYMENT_TARGET = 14.7;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "cis1951.chrizz.Loot-RushUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = "Loot Rush";
-				XROS_DEPLOYMENT_TARGET = 2.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3E8E31A82CF010EE00DFA1E1 /* Build configuration list for PBXProject "Loot Rush" */ = {
+		247D1ADB2CF015660052E737 /* Build configuration list for PBXProject "Loot Rush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E8E31D52CF010EF00DFA1E1 /* Debug */,
-				3E8E31D62CF010EF00DFA1E1 /* Release */,
+				247D1AF12CF0156C0052E737 /* Debug */,
+				247D1AF22CF0156C0052E737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E8E31D72CF010EF00DFA1E1 /* Build configuration list for PBXNativeTarget "Loot Rush" */ = {
+		247D1AF32CF0156C0052E737 /* Build configuration list for PBXNativeTarget "Loot Rush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E8E31D82CF010EF00DFA1E1 /* Debug */,
-				3E8E31D92CF010EF00DFA1E1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3E8E31DA2CF010EF00DFA1E1 /* Build configuration list for PBXNativeTarget "Loot RushTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3E8E31DB2CF010EF00DFA1E1 /* Debug */,
-				3E8E31DC2CF010EF00DFA1E1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3E8E31DD2CF010EF00DFA1E1 /* Build configuration list for PBXNativeTarget "Loot RushUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3E8E31DE2CF010EF00DFA1E1 /* Debug */,
-				3E8E31DF2CF010EF00DFA1E1 /* Release */,
+				247D1AF42CF0156C0052E737 /* Debug */,
+				247D1AF52CF0156C0052E737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		247D1AEE2CF0156B0052E737 /* Loot_Rush.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				247D1AEF2CF0156B0052E737 /* Loot_Rush.xcdatamodel */,
+			);
+			currentVersion = 247D1AEF2CF0156B0052E737 /* Loot_Rush.xcdatamodel */;
+			path = Loot_Rush.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 3E8E31A52CF010EE00DFA1E1 /* Project object */;
+	rootObject = 247D1AD82CF015660052E737 /* Project object */;
 }

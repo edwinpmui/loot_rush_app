@@ -2,7 +2,7 @@
 //  Loot_RushApp.swift
 //  Loot Rush
 //
-//  Created by user268667 on 11/21/24.
+//  Created by David Fu on 11/21/24.
 //
 
 import SwiftUI
