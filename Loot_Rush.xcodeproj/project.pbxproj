@@ -7,26 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		247D1AE42CF015660052E737 /* Loot_RushApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D1AE32CF015660052E737 /* Loot_RushApp.swift */; };
-		247D1AE62CF015660052E737 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D1AE52CF015660052E737 /* ContentView.swift */; };
-		247D1AE82CF0156B0052E737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247D1AE72CF0156B0052E737 /* Assets.xcassets */; };
-		247D1AEB2CF0156B0052E737 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247D1AEA2CF0156B0052E737 /* Preview Assets.xcassets */; };
-		247D1AED2CF0156B0052E737 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D1AEC2CF0156B0052E737 /* Persistence.swift */; };
-		247D1AF02CF0156B0052E737 /* Loot_Rush.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 247D1AEE2CF0156B0052E737 /* Loot_Rush.xcdatamodeld */; };
+		241948E62CFA5AA6009CB1D8 /* Loot_RushApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948E52CFA5AA6009CB1D8 /* Loot_RushApp.swift */; };
+		241948E82CFA5AA6009CB1D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948E72CFA5AA6009CB1D8 /* HomeView.swift */; };
+		241948EA2CFA5AA9009CB1D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241948E92CFA5AA9009CB1D8 /* Assets.xcassets */; };
+		241948ED2CFA5AA9009CB1D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241948EC2CFA5AA9009CB1D8 /* Preview Assets.xcassets */; };
+		241948F72CFA5C41009CB1D8 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948F62CFA5C41009CB1D8 /* PictureModel.swift */; };
+		241948F92CFA5C57009CB1D8 /* LootRushViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948F82CFA5C57009CB1D8 /* LootRushViewModel.swift */; };
+		241948FB2CFA5C6F009CB1D8 /* RushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948FA2CFA5C6F009CB1D8 /* RushView.swift */; };
+		241948FD2CFA5C81009CB1D8 /* LootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948FC2CFA5C81009CB1D8 /* LootView.swift */; };
+		241948FF2CFA5EE1009CB1D8 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948FE2CFA5EE1009CB1D8 /* CollectionView.swift */; };
+		241949012CFA5EEE009CB1D8 /* PictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241949002CFA5EEE009CB1D8 /* PictureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		247D1AE02CF015660052E737 /* Loot Rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loot Rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		247D1AE32CF015660052E737 /* Loot_RushApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loot_RushApp.swift; sourceTree = "<group>"; };
-		247D1AE52CF015660052E737 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		247D1AE72CF0156B0052E737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		247D1AEA2CF0156B0052E737 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		247D1AEC2CF0156B0052E737 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		247D1AEF2CF0156B0052E737 /* Loot_Rush.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Loot_Rush.xcdatamodel; sourceTree = "<group>"; };
+		241948E22CFA5AA6009CB1D8 /* Loot_Rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Loot_Rush.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		241948E52CFA5AA6009CB1D8 /* Loot_RushApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loot_RushApp.swift; sourceTree = "<group>"; };
+		241948E72CFA5AA6009CB1D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		241948E92CFA5AA9009CB1D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		241948EC2CFA5AA9009CB1D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		241948F62CFA5C41009CB1D8 /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
+		241948F82CFA5C57009CB1D8 /* LootRushViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootRushViewModel.swift; sourceTree = "<group>"; };
+		241948FA2CFA5C6F009CB1D8 /* RushView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushView.swift; sourceTree = "<group>"; };
+		241948FC2CFA5C81009CB1D8 /* LootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootView.swift; sourceTree = "<group>"; };
+		241948FE2CFA5EE1009CB1D8 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		241949002CFA5EEE009CB1D8 /* PictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		247D1ADD2CF015660052E737 /* Frameworks */ = {
+		241948DF2CFA5AA6009CB1D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,79 +44,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		247D1AD72CF015660052E737 = {
+		241948D92CFA5AA6009CB1D8 = {
 			isa = PBXGroup;
 			children = (
-				247D1AE22CF015660052E737 /* Loot Rush */,
-				247D1AE12CF015660052E737 /* Products */,
+				241948E42CFA5AA6009CB1D8 /* Loot_Rush */,
+				241948E32CFA5AA6009CB1D8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		247D1AE12CF015660052E737 /* Products */ = {
+		241948E32CFA5AA6009CB1D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				247D1AE02CF015660052E737 /* Loot Rush.app */,
+				241948E22CFA5AA6009CB1D8 /* Loot_Rush.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		247D1AE22CF015660052E737 /* Loot Rush */ = {
+		241948E42CFA5AA6009CB1D8 /* Loot_Rush */ = {
 			isa = PBXGroup;
 			children = (
-				247D1AE32CF015660052E737 /* Loot_RushApp.swift */,
-				247D1AE52CF015660052E737 /* ContentView.swift */,
-				247D1AE72CF0156B0052E737 /* Assets.xcassets */,
-				247D1AEC2CF0156B0052E737 /* Persistence.swift */,
-				247D1AEE2CF0156B0052E737 /* Loot_Rush.xcdatamodeld */,
-				247D1AE92CF0156B0052E737 /* Preview Content */,
+				241948F42CFA5AFA009CB1D8 /* Models */,
+				241948F52CFA5B02009CB1D8 /* ViewModels */,
+				241948F32CFA5AED009CB1D8 /* Views */,
+				241948E52CFA5AA6009CB1D8 /* Loot_RushApp.swift */,
+				241948E92CFA5AA9009CB1D8 /* Assets.xcassets */,
+				241948EB2CFA5AA9009CB1D8 /* Preview Content */,
 			);
-			path = "Loot Rush";
+			path = Loot_Rush;
 			sourceTree = "<group>";
 		};
-		247D1AE92CF0156B0052E737 /* Preview Content */ = {
+		241948EB2CFA5AA9009CB1D8 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				247D1AEA2CF0156B0052E737 /* Preview Assets.xcassets */,
+				241948EC2CFA5AA9009CB1D8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		241948F32CFA5AED009CB1D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				241948E72CFA5AA6009CB1D8 /* HomeView.swift */,
+				241948FA2CFA5C6F009CB1D8 /* RushView.swift */,
+				241948FC2CFA5C81009CB1D8 /* LootView.swift */,
+				241948FE2CFA5EE1009CB1D8 /* CollectionView.swift */,
+				241949002CFA5EEE009CB1D8 /* PictureView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		241948F42CFA5AFA009CB1D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				241948F62CFA5C41009CB1D8 /* PictureModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		241948F52CFA5B02009CB1D8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				241948F82CFA5C57009CB1D8 /* LootRushViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		247D1ADF2CF015660052E737 /* Loot Rush */ = {
+		241948E12CFA5AA6009CB1D8 /* Loot_Rush */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 247D1AF32CF0156C0052E737 /* Build configuration list for PBXNativeTarget "Loot Rush" */;
+			buildConfigurationList = 241948F02CFA5AA9009CB1D8 /* Build configuration list for PBXNativeTarget "Loot_Rush" */;
 			buildPhases = (
-				247D1ADC2CF015660052E737 /* Sources */,
-				247D1ADD2CF015660052E737 /* Frameworks */,
-				247D1ADE2CF015660052E737 /* Resources */,
+				241948DE2CFA5AA6009CB1D8 /* Sources */,
+				241948DF2CFA5AA6009CB1D8 /* Frameworks */,
+				241948E02CFA5AA6009CB1D8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Loot Rush";
-			productName = "Loot Rush";
-			productReference = 247D1AE02CF015660052E737 /* Loot Rush.app */;
+			name = Loot_Rush;
+			productName = Loot_Rush;
+			productReference = 241948E22CFA5AA6009CB1D8 /* Loot_Rush.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		247D1AD82CF015660052E737 /* Project object */ = {
+		241948DA2CFA5AA6009CB1D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					247D1ADF2CF015660052E737 = {
+					241948E12CFA5AA6009CB1D8 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
-			buildConfigurationList = 247D1ADB2CF015660052E737 /* Build configuration list for PBXProject "Loot Rush" */;
+			buildConfigurationList = 241948DD2CFA5AA6009CB1D8 /* Build configuration list for PBXProject "Loot_Rush" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,44 +152,48 @@
 				en,
 				Base,
 			);
-			mainGroup = 247D1AD72CF015660052E737;
-			productRefGroup = 247D1AE12CF015660052E737 /* Products */;
+			mainGroup = 241948D92CFA5AA6009CB1D8;
+			productRefGroup = 241948E32CFA5AA6009CB1D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				247D1ADF2CF015660052E737 /* Loot Rush */,
+				241948E12CFA5AA6009CB1D8 /* Loot_Rush */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		247D1ADE2CF015660052E737 /* Resources */ = {
+		241948E02CFA5AA6009CB1D8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247D1AEB2CF0156B0052E737 /* Preview Assets.xcassets in Resources */,
-				247D1AE82CF0156B0052E737 /* Assets.xcassets in Resources */,
+				241948ED2CFA5AA9009CB1D8 /* Preview Assets.xcassets in Resources */,
+				241948EA2CFA5AA9009CB1D8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		247D1ADC2CF015660052E737 /* Sources */ = {
+		241948DE2CFA5AA6009CB1D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247D1AED2CF0156B0052E737 /* Persistence.swift in Sources */,
-				247D1AF02CF0156B0052E737 /* Loot_Rush.xcdatamodeld in Sources */,
-				247D1AE62CF015660052E737 /* ContentView.swift in Sources */,
-				247D1AE42CF015660052E737 /* Loot_RushApp.swift in Sources */,
+				241948FD2CFA5C81009CB1D8 /* LootView.swift in Sources */,
+				241948F72CFA5C41009CB1D8 /* PictureModel.swift in Sources */,
+				241948FF2CFA5EE1009CB1D8 /* CollectionView.swift in Sources */,
+				241949012CFA5EEE009CB1D8 /* PictureView.swift in Sources */,
+				241948E82CFA5AA6009CB1D8 /* HomeView.swift in Sources */,
+				241948FB2CFA5C6F009CB1D8 /* RushView.swift in Sources */,
+				241948F92CFA5C57009CB1D8 /* LootRushViewModel.swift in Sources */,
+				241948E62CFA5AA6009CB1D8 /* Loot_RushApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		247D1AF12CF0156C0052E737 /* Debug */ = {
+		241948EE2CFA5AA9009CB1D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -216,7 +256,7 @@
 			};
 			name = Debug;
 		};
-		247D1AF22CF0156C0052E737 /* Release */ = {
+		241948EF2CFA5AA9009CB1D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -272,14 +312,14 @@
 			};
 			name = Release;
 		};
-		247D1AF42CF0156C0052E737 /* Debug */ = {
+		241948F12CFA5AA9009CB1D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Loot Rush/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Loot_Rush/Preview Content\"";
 				DEVELOPMENT_TEAM = 3Q5W432BWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -301,14 +341,14 @@
 			};
 			name = Debug;
 		};
-		247D1AF52CF0156C0052E737 /* Release */ = {
+		241948F22CFA5AA9009CB1D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Loot Rush/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Loot_Rush/Preview Content\"";
 				DEVELOPMENT_TEAM = 3Q5W432BWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -333,38 +373,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		247D1ADB2CF015660052E737 /* Build configuration list for PBXProject "Loot Rush" */ = {
+		241948DD2CFA5AA6009CB1D8 /* Build configuration list for PBXProject "Loot_Rush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				247D1AF12CF0156C0052E737 /* Debug */,
-				247D1AF22CF0156C0052E737 /* Release */,
+				241948EE2CFA5AA9009CB1D8 /* Debug */,
+				241948EF2CFA5AA9009CB1D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		247D1AF32CF0156C0052E737 /* Build configuration list for PBXNativeTarget "Loot Rush" */ = {
+		241948F02CFA5AA9009CB1D8 /* Build configuration list for PBXNativeTarget "Loot_Rush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				247D1AF42CF0156C0052E737 /* Debug */,
-				247D1AF52CF0156C0052E737 /* Release */,
+				241948F12CFA5AA9009CB1D8 /* Debug */,
+				241948F22CFA5AA9009CB1D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		247D1AEE2CF0156B0052E737 /* Loot_Rush.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				247D1AEF2CF0156B0052E737 /* Loot_Rush.xcdatamodel */,
-			);
-			currentVersion = 247D1AEF2CF0156B0052E737 /* Loot_Rush.xcdatamodel */;
-			path = Loot_Rush.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 247D1AD82CF015660052E737 /* Project object */;
+	rootObject = 241948DA2CFA5AA6009CB1D8 /* Project object */;
 }
