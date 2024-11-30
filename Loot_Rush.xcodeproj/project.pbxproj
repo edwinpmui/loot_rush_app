@@ -11,12 +11,13 @@
 		241948E82CFA5AA6009CB1D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948E72CFA5AA6009CB1D8 /* HomeView.swift */; };
 		241948EA2CFA5AA9009CB1D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241948E92CFA5AA9009CB1D8 /* Assets.xcassets */; };
 		241948ED2CFA5AA9009CB1D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241948EC2CFA5AA9009CB1D8 /* Preview Assets.xcassets */; };
-		241948F72CFA5C41009CB1D8 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948F62CFA5C41009CB1D8 /* PictureModel.swift */; };
+		241948F72CFA5C41009CB1D8 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948F62CFA5C41009CB1D8 /* Picture.swift */; };
 		241948F92CFA5C57009CB1D8 /* LootRushViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948F82CFA5C57009CB1D8 /* LootRushViewModel.swift */; };
 		241948FB2CFA5C6F009CB1D8 /* RushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948FA2CFA5C6F009CB1D8 /* RushView.swift */; };
 		241948FD2CFA5C81009CB1D8 /* LootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948FC2CFA5C81009CB1D8 /* LootView.swift */; };
 		241948FF2CFA5EE1009CB1D8 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948FE2CFA5EE1009CB1D8 /* CollectionView.swift */; };
 		241949012CFA5EEE009CB1D8 /* PictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241949002CFA5EEE009CB1D8 /* PictureView.swift */; };
+		241949032CFB9658009CB1D8 /* LootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241949022CFB9658009CB1D8 /* LootViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,12 +26,13 @@
 		241948E72CFA5AA6009CB1D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		241948E92CFA5AA9009CB1D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		241948EC2CFA5AA9009CB1D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		241948F62CFA5C41009CB1D8 /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
+		241948F62CFA5C41009CB1D8 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		241948F82CFA5C57009CB1D8 /* LootRushViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootRushViewModel.swift; sourceTree = "<group>"; };
 		241948FA2CFA5C6F009CB1D8 /* RushView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushView.swift; sourceTree = "<group>"; };
 		241948FC2CFA5C81009CB1D8 /* LootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootView.swift; sourceTree = "<group>"; };
 		241948FE2CFA5EE1009CB1D8 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		241949002CFA5EEE009CB1D8 /* PictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureView.swift; sourceTree = "<group>"; };
+		241949022CFB9658009CB1D8 /* LootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,7 @@
 		241948F42CFA5AFA009CB1D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				241948F62CFA5C41009CB1D8 /* PictureModel.swift */,
+				241948F62CFA5C41009CB1D8 /* Picture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				241948F82CFA5C57009CB1D8 /* LootRushViewModel.swift */,
+				241949022CFB9658009CB1D8 /* LootViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -180,10 +183,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				241948FD2CFA5C81009CB1D8 /* LootView.swift in Sources */,
-				241948F72CFA5C41009CB1D8 /* PictureModel.swift in Sources */,
+				241948F72CFA5C41009CB1D8 /* Picture.swift in Sources */,
 				241948FF2CFA5EE1009CB1D8 /* CollectionView.swift in Sources */,
 				241949012CFA5EEE009CB1D8 /* PictureView.swift in Sources */,
 				241948E82CFA5AA6009CB1D8 /* HomeView.swift in Sources */,
+				241949032CFB9658009CB1D8 /* LootViewModel.swift in Sources */,
 				241948FB2CFA5C6F009CB1D8 /* RushView.swift in Sources */,
 				241948F92CFA5C57009CB1D8 /* LootRushViewModel.swift in Sources */,
 				241948E62CFA5AA6009CB1D8 /* Loot_RushApp.swift in Sources */,

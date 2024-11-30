@@ -8,11 +8,52 @@
 import SwiftUI
 
 struct LootView: View {
+    @EnvironmentObject var lootViewModel: LootViewModel
+    @State private var moveUp = false
+    
+    @State private var displayText = "Click on the mystery box to claim your piece!"
+    @State private var pieceStyle: Color = Color.primary
+    @State private var boxDisabled: Bool = false
+    @State private var pieceDisabled: Bool = true
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(displayText)
+                .padding()
+                .frame(alignment: .top)
+            
+            Spacer()
+            
+            ZStack {
+                Button(action: generatePiece) {
+                    Image("MysteryBox")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                }
+                .disabled(boxDisabled)
+                
+                Image(systemName: "puzzlepiece.extension")
+                    .font(.largeTitle)
+                    .offset(x: 0, y: -25)
+                    .offset(y: moveUp ? -200 : 0)
+                    .animation(.easeInOut(duration: 3), value: moveUp)
+                    .foregroundStyle(pieceStyle)
+            }
+            
+            Spacer()
+        }
+        .padding()
+    }
+    
+    func generatePiece() {
+        moveUp = true
+        boxDisabled = true
+        displayText = "And your \(lootViewModel.target?.name ?? "picture") piece is..."
     }
 }
 
 #Preview {
     LootView()
+        .environmentObject(LootViewModel())
 }
