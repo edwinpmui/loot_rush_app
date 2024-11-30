@@ -17,4 +17,15 @@ class LootViewModel: ObservableObject {
     func setTarget(pic: Picture) {
         target = pic
     }
+    
+    func generatePiece() -> Bool {
+        row = Int.random(in: 0..<target!.rows)
+        col = Int.random(in: 0..<target!.cols)
+        let isNew = !target!.collected[row][col]
+        if isNew {
+            target!.collected[row][col] = true
+            target!.numCollected += 1
+        }
+        return isNew
+    }
 }

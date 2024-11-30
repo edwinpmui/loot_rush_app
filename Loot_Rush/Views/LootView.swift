@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct LootView: View {
     @EnvironmentObject var lootViewModel: LootViewModel
@@ -50,6 +51,13 @@ struct LootView: View {
         moveUp = true
         boxDisabled = true
         displayText = "And your \(lootViewModel.target?.name ?? "picture") piece is..."
+        
+        if let image = UIImage(named: "Puppy") {
+            let width = image.size.width
+            let height = image.size.height
+            print("Width: \(width), Height: \(height)")
+        }
+        
     }
 }
 
