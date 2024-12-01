@@ -13,6 +13,7 @@ struct LootView: View {
     @State private var moveUp = false
     
     @State private var displayText = "Click on the mystery box to claim your piece!"
+    @State private var resultText = ""
     @State private var pieceStyle: Color = Color.primary
     @State private var boxDisabled: Bool = false
     @State private var pieceDisabled: Bool = true
@@ -21,6 +22,8 @@ struct LootView: View {
         VStack {
             Text(displayText)
                 .padding()
+                .frame(alignment: .top)
+            Text(resultText)
                 .frame(alignment: .top)
             
             Spacer()
@@ -34,12 +37,16 @@ struct LootView: View {
                 }
                 .disabled(boxDisabled)
                 
-                Image(systemName: "puzzlepiece.extension")
-                    .font(.largeTitle)
-                    .offset(x: 0, y: -25)
-                    .offset(y: moveUp ? -200 : 0)
-                    .animation(.easeInOut(duration: 3), value: moveUp)
-                    .foregroundStyle(pieceStyle)
+                NavigationLink(destination: PictureView()) {
+                    Image(systemName: "puzzlepiece.extension")
+                        .font(.largeTitle)
+                        .offset(x: 0, y: -25)
+                        .offset(y: moveUp ? -200 : 0)
+                        .animation(.easeInOut(duration: 3), value: moveUp)
+                        .foregroundStyle(pieceStyle)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .disabled(pieceDisabled)
             }
             
             Spacer()
@@ -51,13 +58,22 @@ struct LootView: View {
         moveUp = true
         boxDisabled = true
         displayText = "And your \(lootViewModel.target?.name ?? "picture") piece is..."
-        
-        if let image = UIImage(named: "Puppy") {
-            let width = image.size.width
-            let height = image.size.height
-            print("Width: \(width), Height: \(height)")
+        print("changed display text")
+        lootViewModel.generatePiece()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            showPiece()
         }
-        
+    }
+    
+    func showPiece() {
+        if lootViewModel.isNew {
+            resultText = "new! Congratulations!"
+            pieceStyle = Color.green
+        } else {
+            resultText = "not new. Better luck next time!"
+            pieceStyle = Color.red
+        }
+        pieceDisabled = false
     }
 }
 

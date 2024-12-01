@@ -8,7 +8,6 @@
 import Foundation
 import SwiftData
 
-@Model
 class Picture {
     let name: String
     var numCollected: Int

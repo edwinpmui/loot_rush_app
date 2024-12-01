@@ -69,6 +69,7 @@ struct HomeView: View {
             }
             .padding()
         }
+        .environmentObject(lootViewModel)
     }
 }
 
