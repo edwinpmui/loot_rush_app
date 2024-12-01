@@ -58,7 +58,7 @@ struct LootView: View {
         moveUp = true
         boxDisabled = true
         displayText = "And your \(lootViewModel.target?.name ?? "picture") piece is..."
-        print("changed display text")
+        resultText = "(Drumroll)"
         lootViewModel.generatePiece()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             showPiece()

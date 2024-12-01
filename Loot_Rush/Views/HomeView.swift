@@ -10,7 +10,7 @@ import SwiftData
 
 struct HomeView: View {
     @State private var navigationPath = NavigationPath()
-    @StateObject var viewModel = LootRushViewModel()
+    @StateObject var rushViewModel = RushViewModel()
     @StateObject var lootViewModel = LootViewModel()
 
     var body: some View {
@@ -70,6 +70,7 @@ struct HomeView: View {
             .padding()
         }
         .environmentObject(lootViewModel)
+        .environmentObject(rushViewModel)
     }
 }
 
