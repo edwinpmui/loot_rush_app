@@ -11,10 +11,10 @@ import SwiftUI
 
 class PictureViewModel: ObservableObject {
     @Published var pictures: [Picture] = [
-        Picture(name: "Mountain View", length: 900, width: 900, pictureName: "mount-fuji-textural-impressionist-palette-knife-impasto-oil-painting-mona-edulesco-mona-edulesco.jpg"),
-        Picture(name: "Beach Sunset", length: 900, width: 900, pictureName: "1-watercolor-painting-golden-sunset-over-ocean-modern-impressionism-art-ocean-mounir-khalfouf.jpg"),
-        Picture(name: "City Life", length: 1260, width: 1260, pictureName: "fachtali_abderrahim_-_Urban_Life_Abstract_Expressionist_Silhouette_Painting_-_(MeisterDrucke-1465388).jpg"),
-        Picture(name: "Ancient China", length: 1600, width: 1600, pictureName: "f_19-x-19-cm-carre-d-artistes-f2--defaut-front-0.jpg")
+        Picture(name: "Mountain View", length: 900, width: 900, pictureName: "Mountain.jpg"),
+        Picture(name: "Beach Sunset", length: 900, width: 900, pictureName: "Watercolor.jpg"),
+        Picture(name: "City Life", length: 1260, width: 1260, pictureName: "City-Life.jpg"),
+        Picture(name: "Ancient China", length: 1600, width: 1600, pictureName: "Ancient-China.jpg")
     ]
     
     @Published var target: Picture? = nil
