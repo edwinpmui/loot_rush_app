@@ -31,11 +31,7 @@ struct RushView: View {
                     viewModel.generateRandomRoutes()
                 }
                 .padding()
-                
-                NavigationLink(destination: HomeView()) {
-                    Text("Back to Home")
-                }
-                .padding()
+
                 
                 if let selectedRoute = viewModel.selectedRoute {
                     ForEach(selectedRoute.waypoints, id: \.self) { waypoint in
