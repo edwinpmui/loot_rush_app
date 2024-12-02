@@ -38,12 +38,13 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     func generateRandomRoutes() {
         guard let userLocation = location else { return }
         
-        func randomCoordinate(from coordinate: CLLocationCoordinate2D, within radius: Double) -> CLLocationCoordinate2D {
+        func randomCoordinate(from coordinate: CLLocationCoordinate2D, within radius: Double) -> Location {
             let randomAngle = Double.random(in: 0..<360) * .pi / 180
             let randomDistance = Double.random(in: 0..<radius)
             let deltaLatitude = randomDistance * cos(randomAngle) / 111000
             let deltaLongitude = randomDistance * sin(randomAngle) / (111000 * cos(coordinate.latitude * .pi / 180))
-            return CLLocationCoordinate2D(latitude: coordinate.latitude + deltaLatitude, longitude: coordinate.longitude + deltaLongitude)
+            let location = Location(coordinate: CLLocationCoordinate2D(latitude: coordinate.latitude + deltaLatitude, longitude: coordinate.longitude + deltaLongitude))
+            return location
         }
         
         let radius: Double = 1000 // 1 km radius

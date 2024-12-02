@@ -15,7 +15,7 @@ struct RushView: View {
         NavigationView {
             VStack {
                 Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.selectedRoute?.waypoints ?? []) { waypoint in
-                    MapPin(coordinate: waypoint)
+                    MapPin(coordinate: waypoint.coordinate)
                 }
                 .frame(height: 300)
                 
