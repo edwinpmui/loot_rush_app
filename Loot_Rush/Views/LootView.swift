@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 
 struct LootView: View {
-    @EnvironmentObject var lootViewModel: LootViewModel
+    @EnvironmentObject var picViewModel: PictureViewModel
     @State private var moveUp = false
     
     @State private var displayText = "Click on the mystery box to claim your piece!"
@@ -17,6 +17,8 @@ struct LootView: View {
     @State private var pieceStyle: Color = Color.primary
     @State private var boxDisabled: Bool = false
     @State private var pieceDisabled: Bool = true
+    
+    @State private var selectedPicture: Picture? = nil
     
     var body: some View {
         VStack {
@@ -37,7 +39,7 @@ struct LootView: View {
                 }
                 .disabled(boxDisabled)
                 
-                NavigationLink(destination: PictureView()) {
+                NavigationLink(destination: PictureView(picture: selectedPicture ?? picViewModel.pictures.first!)) {
                     Image(systemName: "puzzlepiece.extension")
                         .font(.largeTitle)
                         .offset(x: 0, y: -25)
@@ -57,16 +59,16 @@ struct LootView: View {
     func generatePiece() {
         moveUp = true
         boxDisabled = true
-        displayText = "And your \(lootViewModel.target?.name ?? "picture") piece is..."
+        displayText = "And your \(picViewModel.target?.name ?? "picture") piece is..."
         resultText = "(Drumroll)"
-        lootViewModel.generatePiece()
+        picViewModel.collectRandomPiece()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             showPiece()
         }
     }
     
     func showPiece() {
-        if lootViewModel.isNew {
+        if picViewModel.isNew {
             resultText = "new! Congratulations!"
             pieceStyle = Color.green
         } else {
@@ -79,5 +81,5 @@ struct LootView: View {
 
 #Preview {
     LootView()
-        .environmentObject(LootViewModel())
+        .environmentObject(PictureViewModel())
 }

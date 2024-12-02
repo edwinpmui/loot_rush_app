@@ -11,7 +11,7 @@ import SwiftData
 struct HomeView: View {
     @State private var navigationPath = NavigationPath()
     @StateObject var rushViewModel = RushViewModel()
-    @StateObject var lootViewModel = LootViewModel()
+    @StateObject var lootViewModel = PictureViewModel()
 
     var body: some View {
         NavigationStack(path: $navigationPath) {
