@@ -18,6 +18,8 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     )
     @Published var location: CLLocation?
     
+    var isRequestingLocation = false
+    
     private let locationManager = CLLocationManager()
     
     override init() {
@@ -27,12 +29,30 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        location = locations.first
-        if let location = location {
-            region.center = location.coordinate
-            generateRandomRoutes()
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .authorizedWhenInUse, .authorizedAlways:
+            requestLocation()
+        case .denied, .restricted:
+            break
+        default:
+            break
         }
+    }
+    
+    func requestLocation() {
+        if !isRequestingLocation {
+            isRequestingLocation = true
+            locationManager.requestLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        isRequestingLocation = false
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        isRequestingLocation = false
     }
     
     func generateRandomRoutes() {
