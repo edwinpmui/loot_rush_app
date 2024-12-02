@@ -33,11 +33,7 @@ struct RushView: View {
                     viewModel.generateRandomRoutes()
                 }
                 .padding()
-                
-                NavigationLink(destination: HomeView()) {
-                    Text("Back to Home")
-                }
-                .padding()
+
                 
                 NavigationLink(destination: LootView()) {
                     Text("Loot view")
