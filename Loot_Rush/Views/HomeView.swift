@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
+    @Environment(\.modelContext) private var modelContext
     @State private var navigationPath = NavigationPath()
     @StateObject var rushViewModel = RushViewModel()
     @StateObject var lootViewModel = PictureViewModel()
@@ -75,5 +76,12 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Picture.self, configurations: config)
+        return HomeView()
+             .modelContainer(container)
+    } catch {
+        fatalError("Failed to create model container.")
+    }
 }

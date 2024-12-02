@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CollectionView: View {
+    @Environment(\.modelContext) private var modelContext
     @EnvironmentObject var picViewModel: PictureViewModel
+    @Query private var pictures: [Picture]
 
     var body: some View {
         NavigationView {
@@ -85,6 +88,14 @@ struct PuzzleRow: View {
 }
 
 #Preview {
-    CollectionView()
-        .environmentObject(PictureViewModel())
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Picture.self, configurations: config)
+        return CollectionView()
+             .modelContainer(container)
+             .environmentObject(PictureViewModel())
+    } catch {
+        fatalError("Failed to create model container.")
+    }
 }
+

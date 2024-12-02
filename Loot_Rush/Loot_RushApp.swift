@@ -13,5 +13,6 @@ struct Loot_RushApp: App {
         WindowGroup {
             HomeView()
         }
+        .modelContainer(for: Picture.self)
     }
 }

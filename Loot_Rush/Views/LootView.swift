@@ -7,8 +7,10 @@
 
 import SwiftUI
 import UIKit
+import SwiftData
 
 struct LootView: View {
+    @Environment(\.modelContext) private var modelContext
     @EnvironmentObject var picViewModel: PictureViewModel
     @State private var moveUp = false
     
@@ -39,7 +41,7 @@ struct LootView: View {
                 }
                 .disabled(boxDisabled)
                 
-                NavigationLink(destination: PictureView(picture: selectedPicture ?? picViewModel.pictures.first!)) {
+                NavigationLink(destination: PictureView(picture: picViewModel.target ?? picViewModel.pictures.first!)) {
                     Image(systemName: "puzzlepiece.extension")
                         .font(.largeTitle)
                         .offset(x: 0, y: -25)
@@ -47,10 +49,13 @@ struct LootView: View {
                         .animation(.easeInOut(duration: 3), value: moveUp)
                         .foregroundStyle(pieceStyle)
                 }
-                .buttonStyle(PlainButtonStyle())
-                .disabled(pieceDisabled)
+                .disabled(false)
+                
+                NavigationLink(destination: HomeView()) {
+                    Text("Home")
+                }
+                .disabled(false)
             }
-            
             Spacer()
         }
         .padding()
@@ -61,7 +66,7 @@ struct LootView: View {
         boxDisabled = true
         displayText = "And your \(picViewModel.target?.name ?? "picture") piece is..."
         resultText = "(Drumroll)"
-        picViewModel.collectRandomPiece()
+        picViewModel.generatePiece()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             showPiece()
         }
@@ -80,6 +85,13 @@ struct LootView: View {
 }
 
 #Preview {
-    LootView()
-        .environmentObject(PictureViewModel())
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Picture.self, configurations: config)
+        return LootView()
+             .modelContainer(container)
+             .environmentObject(PictureViewModel())
+    } catch {
+        fatalError("Failed to create model container.")
+    }
 }

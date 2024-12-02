@@ -7,8 +7,10 @@
 
 import SwiftUI
 import MapKit
+import SwiftData
 
 struct RushView: View {
+    @Environment(\.modelContext) private var modelContext
     @StateObject private var viewModel = RushViewModel()
     
     var body: some View {
@@ -36,6 +38,10 @@ struct RushView: View {
                     Text("Back to Home")
                 }
                 .padding()
+                
+                NavigationLink(destination: LootView()) {
+                    Text("Loot view")
+                }
                 
                 if let selectedRoute = viewModel.selectedRoute {
                     ForEach(selectedRoute.waypoints, id: \.self) { waypoint in

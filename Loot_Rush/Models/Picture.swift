@@ -8,15 +8,16 @@
 import Foundation
 import SwiftData
 
-class Picture: Identifiable, ObservableObject {
+@Model
+class Picture: Identifiable {
     let id = UUID()
     let name: String
-    @Published var numCollected: Int = 0
+    var numCollected: Int = 0
     let rows: Int = 10
     let cols: Int = 10
     let totalPieces: Int = 100
-    @Published var collected: [[Bool]]
-    let pictureName: String
+    var collected: [[Bool]]
+    let pictureName: String // This is the picture's source
     
     let length: CGFloat  // Full picture length
     let width: CGFloat   // Full picture width
@@ -29,6 +30,6 @@ class Picture: Identifiable, ObservableObject {
         self.length = length
         self.width = width
         self.pictureName = pictureName
-        self.collected = Array(repeating: Array(repeating: false, count: cols), count: rows)
+        self.collected = Array(repeating: Array(repeating: false, count: 10), count: 10)
     }
 }

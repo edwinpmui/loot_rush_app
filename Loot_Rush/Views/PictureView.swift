@@ -6,19 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PictureView: View {
+    @Environment(\.modelContext) private var modelContext
     var picture: Picture
     
     var body: some View {
         VStack {
             ZStack {
                 // Display the picture as the background
-                Image(picture.pictureName)
+                Image(picture.name)
                     .resizable()
-                    .scaledToFit()
                     .frame(width: 300, height: 300) // Fixed frame size
                     .clipped()
+                
+                Text(picture.name)
                 
                 // Overlay the grid with the collected pieces removed
                 ForEach(0..<10, id: \.self) { row in
@@ -28,7 +31,7 @@ struct PictureView: View {
                         if !picture.collected[row][col] {
                             // Show the grid piece if it's not collected
                             Rectangle()
-                                .fill(Color.black.opacity(0.5)) // Black grid overlay with some transparency
+                                .fill(Color.black.opacity(0.5)) // Black grid overlay with some transparency. Do 1 for final
                                 .frame(width: 30, height: 30)
                                 .position(
                                     x: CGFloat(col) * 30 + 15,  // Offset the x position
@@ -52,5 +55,12 @@ struct PictureView: View {
 }
 
 #Preview {
-    PictureView(picture: PictureViewModel().pictures[0])
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Picture.self, configurations: config)
+        return PictureView(picture: PictureViewModel().pictures[0])
+             .modelContainer(container)
+    } catch {
+        fatalError("Failed to create model container.")
+    }
 }
