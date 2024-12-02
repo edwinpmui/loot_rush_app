@@ -17,6 +17,7 @@
 		241948FF2CFA5EE1009CB1D8 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241948FE2CFA5EE1009CB1D8 /* CollectionView.swift */; };
 		241949012CFA5EEE009CB1D8 /* PictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241949002CFA5EEE009CB1D8 /* PictureView.swift */; };
 		241949072CFBE8C3009CB1D8 /* RushViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241949062CFBE8C3009CB1D8 /* RushViewModel.swift */; };
+		3EA87F3E2CFE3CC5009B603F /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87F3D2CFE3CC0009B603F /* Route.swift */; };
 		509D7C842CFD588600F08929 /* PictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D7C832CFD588600F08929 /* PictureViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		241948FE2CFA5EE1009CB1D8 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		241949002CFA5EEE009CB1D8 /* PictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureView.swift; sourceTree = "<group>"; };
 		241949062CFBE8C3009CB1D8 /* RushViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushViewModel.swift; sourceTree = "<group>"; };
+		3EA87F3D2CFE3CC0009B603F /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		509D7C832CFD588600F08929 /* PictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 		241948F42CFA5AFA009CB1D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3EA87F3D2CFE3CC0009B603F /* Route.swift */,
 				241948F62CFA5C41009CB1D8 /* Picture.swift */,
 			);
 			path = Models;
@@ -185,6 +188,7 @@
 				241948FD2CFA5C81009CB1D8 /* LootView.swift in Sources */,
 				509D7C842CFD588600F08929 /* PictureViewModel.swift in Sources */,
 				241948F72CFA5C41009CB1D8 /* Picture.swift in Sources */,
+				3EA87F3E2CFE3CC5009B603F /* Route.swift in Sources */,
 				241948FF2CFA5EE1009CB1D8 /* CollectionView.swift in Sources */,
 				241949012CFA5EEE009CB1D8 /* PictureView.swift in Sources */,
 				241948E82CFA5AA6009CB1D8 /* HomeView.swift in Sources */,

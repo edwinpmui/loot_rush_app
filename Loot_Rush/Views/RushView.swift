@@ -104,11 +104,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 }
 
-struct LootView: View {
-    var body: some View {
-        Text("Loot View")
-    }
-}
 
 #Preview {
     RushView()
