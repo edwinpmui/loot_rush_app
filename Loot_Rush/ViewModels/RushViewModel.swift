@@ -48,6 +48,14 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            self.location = location
+            region = MKCoordinateRegion(
+                center: location.coordinate,
+                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                )
+            generateRandomRoutes()
+        }
         isRequestingLocation = false
     }
     
@@ -67,7 +75,7 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             return location
         }
         
-        let radius: Double = 1000 // 1 km radius
+        let radius: Double = 1000
         routes = [
             Route(name: "Route 1", waypoints: [randomCoordinate(from: userLocation.coordinate, within: radius)]),
             Route(name: "Route 2", waypoints: [randomCoordinate(from: userLocation.coordinate, within: radius)]),
