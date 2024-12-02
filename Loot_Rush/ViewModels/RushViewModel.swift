@@ -12,15 +12,16 @@ import CoreLocation
 class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var selectedRoute: Route?
     @Published var routes: [Route] = []
-    @Published var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    )
+//    @Published var region = MKCoordinateRegion(
+//        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
+//        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+//    )
     @Published var location: CLLocation?
     
     @Published var authorizationStatus: CLAuthorizationStatus?
 
     private let locationManager = CLLocationManager()
+    private var isRequestingLocation = false
     
     override init() {
         super.init()
@@ -40,17 +41,29 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
     
+    func loadRush() {
+        switch locationManager.authorizationStatus {
+        case .authorizedWhenInUse, .authorizedAlways:
+            requestLocation()
+        default:
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
     func requestLocation() {
         locationManager.requestLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        isRequestingLocation = false
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
         if let location = locations.first {
             self.location = location
-            region = MKCoordinateRegion(
-                center: location.coordinate,
-                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-                )
+//            region = MKCoordinateRegion(
+//                center: locationManager.location!.coordinate,
+//                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+//                )
             generateRandomRoutes()
         }
     }
