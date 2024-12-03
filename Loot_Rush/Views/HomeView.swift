@@ -69,10 +69,6 @@ struct HomeView: View {
                 Spacer()
             }
             .padding()
-            
-            Button("Reset UserDefaults") {
-                resetUserDefaults()
-            }
         }
         .environmentObject(lootViewModel)
         .environmentObject(rushViewModel)
@@ -88,14 +84,6 @@ struct HomeView: View {
             modelContext.insert(Picture(name: "Ancient China", length: 1600, width: 1600, pictureName: "Ancient-China.jpg"))
             UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
         }
-    }
-    
-    func resetUserDefaults() {
-        let defaults = UserDefaults.standard
-        if let appDomain = Bundle.main.bundleIdentifier {
-            defaults.removePersistentDomain(forName: appDomain)
-        }
-        defaults.synchronize()
     }
 }
 
