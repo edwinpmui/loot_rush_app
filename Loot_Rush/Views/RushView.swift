@@ -53,9 +53,21 @@ struct RushView: View {
                     }
                 }
             }
-        }
-        .onAppear {
-            viewModel.loadRush()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Image(systemName: "arrow.backward")
+                            Text("Home")
+                        }
+                    }
+                }
+            }
+            .onAppear {
+                viewModel.loadRush()
+            }
         }
     }
     }
