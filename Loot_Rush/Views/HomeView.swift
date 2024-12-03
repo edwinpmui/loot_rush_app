@@ -69,9 +69,33 @@ struct HomeView: View {
                 Spacer()
             }
             .padding()
+            
+            Button("Reset UserDefaults") {
+                resetUserDefaults()
+            }
         }
         .environmentObject(lootViewModel)
         .environmentObject(rushViewModel)
+        .onAppear {checkFirstLaunch()}
+    }
+    
+    func checkFirstLaunch() {
+        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
+        if !hasLaunchedBefore {
+            modelContext.insert(Picture(name: "Mountain", length: 900, width: 900, pictureName: "Mountain.jpg"))
+            modelContext.insert(Picture(name: "Watercolor", length: 900, width: 900, pictureName: "Watercolor.jpg"))
+            modelContext.insert(Picture(name: "City-Life", length: 1260, width: 1260, pictureName: "City-Life.jpg"))
+            modelContext.insert(Picture(name: "Ancient-China", length: 1600, width: 1600, pictureName: "Ancient-China.jpg"))
+            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+        }
+    }
+    
+    func resetUserDefaults() {
+        let defaults = UserDefaults.standard
+        if let appDomain = Bundle.main.bundleIdentifier {
+            defaults.removePersistentDomain(forName: appDomain)
+        }
+        defaults.synchronize()
     }
 }
 

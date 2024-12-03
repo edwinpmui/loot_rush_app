@@ -69,7 +69,6 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func generateRandomRoutes() {
-        print("Function called")
         guard let userLocation = locationManager.location else { return }
         
         func randomCoordinate(from coordinate: CLLocationCoordinate2D, within radius: Double) -> Location {
@@ -80,8 +79,6 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             let location = Location(coordinate: CLLocationCoordinate2D(latitude: coordinate.latitude + deltaLatitude, longitude: coordinate.longitude + deltaLongitude))
             return location
         }
-        
-        print("Function passed")
         
         let radius: Double = 1000
         routes = [

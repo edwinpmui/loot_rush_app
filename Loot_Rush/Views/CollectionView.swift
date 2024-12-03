@@ -17,8 +17,8 @@ struct CollectionView: View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                    ForEach(0..<picViewModel.pictures.count, id: \.self) { index in
-                        PuzzleRow(index: index)
+                    ForEach(pictures) { picture in
+                        PuzzleRow(picture: picture)
                     }
                 }
                 .padding()
@@ -29,12 +29,10 @@ struct CollectionView: View {
 }
 
 struct PuzzleRow: View {
-    var index: Int
+    var picture: Picture
     @EnvironmentObject var picViewModel: PictureViewModel
 
     var body: some View {
-        let picture = picViewModel.pictures[index]
-
         // Wrapping everything inside a NavigationLink
         NavigationLink(destination: PictureView(picture: picture)) {
             ZStack {
