@@ -12,7 +12,8 @@ import SwiftData
 struct RushView: View {
     @Environment(\.modelContext) private var modelContext
     @EnvironmentObject private var viewModel: RushViewModel
-    
+    @Environment(\.dismiss) private var dismiss
+
     var body: some View {
     NavigationView {
         VStack {
