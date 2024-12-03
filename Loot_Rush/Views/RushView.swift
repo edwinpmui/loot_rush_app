@@ -23,7 +23,13 @@ struct RushView: View {
                 Map(coordinateRegion: $region,
                     showsUserLocation: true,
                     annotationItems: viewModel.selectedRoute?.waypoints ?? []) { waypoint in
-                    MapPin(coordinate: waypoint.coordinate)
+                    if viewModel.isWithinRadius(of: waypoint.coordinate) {
+                    NavigationLink(destination: LootView()) {
+                        MapPin(coordinate: waypoint.coordinate)
+                        }
+                    } else {
+                        MapPin(coordinate: waypoint.coordinate)
+                    }
                 }
                 .frame(height: 300)
                 
@@ -40,11 +46,6 @@ struct RushView: View {
                 }
                 .padding()
 
-                
-                NavigationLink(destination: LootView()) {
-                    Text("Loot view")
-                }
-                
                 if let selectedRoute = viewModel.selectedRoute {
                     ForEach(selectedRoute.waypoints, id: \.self) { waypoint in
                         NavigationLink(destination: LootView()) {
