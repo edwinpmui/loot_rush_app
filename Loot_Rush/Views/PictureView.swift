@@ -11,7 +11,6 @@ import SwiftData
 struct PictureView: View {
     @Environment(\.modelContext) private var modelContext
     var picture: Picture
-    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         VStack {
@@ -40,24 +39,36 @@ struct PictureView: View {
                     }
                 }
             }
+            .frame(width: 300, height: 300) // Ensures the ZStack stays within the bounds of the image
+            
+            VStack {
+                Text("\(picture.numCollected)/100")
+                    .font(.title2)
+                    .fontWeight(.bold)      // Make the text bold
+                    .foregroundColor(.white) // Set text color to white for contrast
+                    .padding(.vertical, 8)   // Add vertical padding for better spacing
+                    .frame(maxWidth: .infinity) // Expand horizontally
+                    .background(Color.blue.opacity(0.7)) // Background color with transparency
+                    .cornerRadius(10)         // Rounded corners
+                    .shadow(color: Color.gray.opacity(0.5), radius: 5, x: 0, y: 3) // Add a subtle shadow
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
+                    NavigationLink(destination: CollectionView().navigationBarBackButtonHidden(true)) {
                         HStack {
                             Image(systemName: "arrow.backward")
                             Text("Collections")
                         }
                     }
                 }
-            }
-            .frame(width: 300, height: 300) // Ensures the ZStack stays within the bounds of the image
-
-            VStack {
-                Text("\(picture.numCollected)/100")
-                    .font(.title2)
-                    .padding(.top)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: RushView().navigationBarBackButtonHidden(true)) {
+                        HStack {
+                            Text("Rush View")
+                            Image(systemName: "arrow.forward")
+                        }
+                    }
+                }
             }
         }
         .navigationTitle(picture.name) // Set the navigation title to the picture name
