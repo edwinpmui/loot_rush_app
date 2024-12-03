@@ -20,7 +20,7 @@ struct LootView: View {
     @State private var boxDisabled: Bool = false
     @State private var pieceDisabled: Bool = true
     
-    var picture: Picture
+    @State var picture: Picture
     
     var body: some View {
         VStack {
@@ -51,7 +51,7 @@ struct LootView: View {
                         .offset(y: moveUp ? 0 : 200) // Animation moves the piece up
                         .animation(.easeInOut(duration: 3), value: moveUp)
                 }
-                .disabled(pieceDisabled)
+                .disabled(false)
                 .zIndex(1)
                 .offset(y: -200)
             }
@@ -63,8 +63,8 @@ struct LootView: View {
     func generatePiece() {
         moveUp = true
         boxDisabled = true
-        displayText = "And your \(picture.name) piece is..."
         picViewModel.setTarget(pic: picture)
+        displayText = "And your \(picture.name) piece is..."
         print("\(picture.name)")
         resultText = "(Drumroll)"
         picViewModel.generatePiece()

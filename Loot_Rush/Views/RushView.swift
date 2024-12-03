@@ -63,6 +63,7 @@ struct RushView: View {
         }
         .onAppear {
             viewModel.loadRush()
+            viewModel.shouldNavigateToLootView = false
         }
     }
 }
