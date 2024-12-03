@@ -14,6 +14,8 @@ struct RushView: View {
     @EnvironmentObject private var viewModel: RushViewModel
     @EnvironmentObject private var picViewModel: PictureViewModel
     @Query private var pictures: [Picture]
+    
+    @State private var nearPin = false
 
     var body: some View {
         VStack {
@@ -39,14 +41,14 @@ struct RushView: View {
 
             Button("Collect") {
                 viewModel.checkIfWithinRadius()
+                nearPin = viewModel.shouldNavigateToLootView
             }
             .padding()
             
-            Text("\(pictures.count)")
-            
-            NavigationLink(destination: LootView(picture: pictures.randomElement()!), isActive: $viewModel.shouldNavigateToLootView) {
+            NavigationLink(destination: LootView(picture: pictures.randomElement()!)) {
                 Text("Go to piece")
             }
+            .disabled(!nearPin)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -60,6 +62,7 @@ struct RushView: View {
         }
         .onAppear {
             viewModel.loadRush()
+            viewModel.generateRandomRoutes()
         }
     }
 }

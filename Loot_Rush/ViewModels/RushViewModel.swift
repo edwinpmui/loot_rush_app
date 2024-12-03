@@ -97,10 +97,13 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func isWithinRadius(of waypoint: CLLocationCoordinate2D) -> Bool {
-        guard let userLocation = location else { return false }
+        print("within called")
+        guard let userLocation = locationManager.location else { return false }
+        print("within passed")
         let waypointLocation = CLLocation(latitude: waypoint.latitude, longitude: waypoint.longitude)
         let distance = userLocation.distance(from: waypointLocation)
-        return distance <= 100 // Radius in meters
+        print(distance)
+        return distance <= 1000 // Radius in meters
     }
 
     func checkIfWithinRadius() {

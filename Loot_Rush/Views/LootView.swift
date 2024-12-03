@@ -20,7 +20,7 @@ struct LootView: View {
     @State private var boxDisabled: Bool = false
     @State private var pieceDisabled: Bool = true
     
-    var picture: Picture
+    @State var picture: Picture
     
     var body: some View {
         VStack {
@@ -31,8 +31,6 @@ struct LootView: View {
                 .frame(alignment: .top)
             
             Spacer()
-            
-            Text("\(picture.name)")
             
             ZStack {
                 Button(action: generatePiece) {
