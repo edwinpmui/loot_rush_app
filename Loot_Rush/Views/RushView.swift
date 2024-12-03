@@ -16,6 +16,7 @@ struct RushView: View {
     @Query private var pictures: [Picture]
     
     @State private var nearPin = false
+    @State private var canPickRoute = true
 
     var body: some View {
         VStack {
@@ -34,10 +35,25 @@ struct RushView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding()
 
-            Button("Choose New Route") {
-                viewModel.generateRandomRoutes()
-            }
+//            Button("Choose New Route") {
+//                viewModel.generateRandomRoutes()
+//                canPickRoute = false
+//                await delayRouteGeneration()
+//            }
+//            .padding()
+//            .disabled(!canPickRoute)
+            
+            Button(action: {
+                Task {
+                    viewModel.generateRandomRoutes()
+                    canPickRoute = false
+                    await delayRouteGeneration()
+                }
+            }, label: {
+                Text("Choose New Route")
+            })
             .padding()
+            .disabled(!canPickRoute)
 
             Button("Collect") {
                 viewModel.checkIfWithinRadius()
@@ -62,8 +78,16 @@ struct RushView: View {
         }
         .onAppear {
             viewModel.loadRush()
-            viewModel.generateRandomRoutes()
+            if !viewModel.locationsGenerated {
+                viewModel.generateRandomRoutes()
+                viewModel.locationsGenerated = true
+            }
         }
+    }
+    
+    func delayRouteGeneration() async {
+        try? await Task.sleep(nanoseconds: 5_000_000_000)
+        canPickRoute = true
     }
 }
 #Preview {

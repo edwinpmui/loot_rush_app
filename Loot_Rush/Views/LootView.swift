@@ -12,6 +12,7 @@ import SwiftData
 struct LootView: View {
     @Environment(\.modelContext) private var modelContext
     @EnvironmentObject var picViewModel: PictureViewModel
+    @EnvironmentObject var viewModel: RushViewModel
     @State private var moveUp = false
     
     @State private var displayText = "Click on the mystery box to claim your piece!"
@@ -63,12 +64,12 @@ struct LootView: View {
         boxDisabled = true
         displayText = "And your \(picture.name) piece is..."
         picViewModel.setTarget(pic: picture)
-        print("\(picture.name)")
         resultText = "(Drumroll)"
         picViewModel.generatePiece()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             showPiece()
         }
+        viewModel.locationsGenerated = false
     }
     
     func showPiece() {

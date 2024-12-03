@@ -22,6 +22,7 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     private let locationManager = CLLocationManager()
     private var regionSet = false
+    @Published var locationsGenerated = false
     
     override init() {
         super.init()
@@ -52,13 +53,11 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func requestLocation() {
         locationManager.requestLocation()
-        print(locationManager.location)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         if !regionSet {
-            print("location change")
             DispatchQueue.main.async {
                 self.region = MKCoordinateRegion(
                     center: location.coordinate,
@@ -93,17 +92,13 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         ]
         
         selectedRoute = routes.randomElement()
-        print("Generated")
     }
     
     func isWithinRadius(of waypoint: CLLocationCoordinate2D) -> Bool {
-        print("within called")
         guard let userLocation = locationManager.location else { return false }
-        print("within passed")
         let waypointLocation = CLLocation(latitude: waypoint.latitude, longitude: waypoint.longitude)
         let distance = userLocation.distance(from: waypointLocation)
-        print(distance)
-        return distance <= 1000 // Radius in meters
+        return distance <= 100 // Radius in meters
     }
 
     func checkIfWithinRadius() {
