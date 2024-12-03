@@ -29,7 +29,7 @@ struct PictureView: View {
                         if !picture.collected[row][col] {
                             // Show the grid piece if it's not collected
                             Rectangle()
-                                .fill(Color.black.opacity(0.6)) // Black grid overlay with some transparency. Do 1 for final
+                                .fill(Color.black.opacity(1)) // Black grid overlay with some transparency. Do 1 for final
                                 .frame(width: 30, height: 30)
                                 .position(
                                     x: CGFloat(col) * 30 + 15,  // Offset the x position
