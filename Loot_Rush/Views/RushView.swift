@@ -11,20 +11,21 @@ import SwiftData
 
 struct RushView: View {
     @Environment(\.modelContext) private var modelContext
-    @StateObject private var viewModel = RushViewModel()
-    @State var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 39.95193335771201, longitude: -75.20110874816821),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    )
-    @Environment(\.dismiss) private var dismiss
-
+    @EnvironmentObject private var viewModel: RushViewModel
+    
     var body: some View {
         NavigationView {
             VStack {
-                Map(coordinateRegion: $region,
+                Map(coordinateRegion: $viewModel.region,
                     showsUserLocation: true,
                     annotationItems: viewModel.selectedRoute?.waypoints ?? []) { waypoint in
-                    MapPin(coordinate: waypoint.coordinate)
+                    if viewModel.isWithinRadius(of: waypoint.coordinate) {
+                    NavigationLink(destination: LootView()) {
+                        MapPin(coordinate: waypoint.coordinate)
+                        }
+                    } else {
+                        MapPin(coordinate: waypoint.coordinate)
+                    }
                 }
                 .frame(height: 300)
                 
@@ -41,11 +42,6 @@ struct RushView: View {
                 }
                 .padding()
 
-                
-                NavigationLink(destination: LootView()) {
-                    Text("Loot view")
-                }
-                
                 if let selectedRoute = viewModel.selectedRoute {
                     ForEach(selectedRoute.waypoints, id: \.self) { waypoint in
                         NavigationLink(destination: LootView()) {
@@ -68,10 +64,6 @@ struct RushView: View {
             }
             .onAppear {
                 viewModel.loadRush()
-                if let location = viewModel.location {
-                    region.center = location.coordinate
-                    viewModel.generateRandomRoutes()
-                }
             }
         }
     }
@@ -79,5 +71,14 @@ struct RushView: View {
 
 
 #Preview {
-    RushView()
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Picture.self, configurations: config)
+        return RushView()
+             .modelContainer(container)
+             .environmentObject(RushViewModel())
+             .environmentObject(PictureViewModel())
+    } catch {
+        fatalError("Failed to create model container.")
+    }
 }

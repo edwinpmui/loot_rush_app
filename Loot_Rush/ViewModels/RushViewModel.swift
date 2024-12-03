@@ -12,16 +12,15 @@ import CoreLocation
 class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var selectedRoute: Route?
     @Published var routes: [Route] = []
-//    @Published var region = MKCoordinateRegion(
-//        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
-//        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-//    )
+    @Published var region: MKCoordinateRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), // Default location
+        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+    )
     @Published var location: CLLocation?
-    
     @Published var authorizationStatus: CLAuthorizationStatus?
+    @Published var shouldNavigateToLootView: Bool = false
 
     private let locationManager = CLLocationManager()
-    private var isRequestingLocation = false
     
     override init() {
         super.init()
@@ -55,16 +54,14 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        isRequestingLocation = false
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        if let location = locations.first {
-            self.location = location
-//            region = MKCoordinateRegion(
-//                center: locationManager.location!.coordinate,
-//                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-//                )
-            generateRandomRoutes()
+        guard let location = locations.first else { return }
+        DispatchQueue.main.async {
+            self.region = MKCoordinateRegion(
+                center: location.coordinate,
+                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            )
+            self.generateRandomRoutes()
+            self.checkIfWithinRadius()
         }
     }
     
@@ -73,7 +70,8 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func generateRandomRoutes() {
-        guard let userLocation = location else { return }
+        print("Function called")
+        guard let userLocation = locationManager.location else { return }
         
         func randomCoordinate(from coordinate: CLLocationCoordinate2D, within radius: Double) -> Location {
             let randomAngle = Double.random(in: 0..<360) * .pi / 180
@@ -83,6 +81,8 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             let location = Location(coordinate: CLLocationCoordinate2D(latitude: coordinate.latitude + deltaLatitude, longitude: coordinate.longitude + deltaLongitude))
             return location
         }
+        
+        print("Function passed")
         
         let radius: Double = 1000
         routes = [
@@ -99,5 +99,16 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         let waypointLocation = CLLocation(latitude: waypoint.latitude, longitude: waypoint.longitude)
         let distance = userLocation.distance(from: waypointLocation)
         return distance <= 100 // Radius in meters
+    }
+
+    func checkIfWithinRadius() {
+        guard let selectedRoute = selectedRoute else { return }
+        for waypoint in selectedRoute.waypoints {
+            if isWithinRadius(of: waypoint.coordinate) {
+                shouldNavigateToLootView = true
+                return
+            }
+        }
+        shouldNavigateToLootView = false
     }
 }
