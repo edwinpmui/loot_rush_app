@@ -44,17 +44,14 @@ struct LootView: View {
                 NavigationLink(destination: PictureView(picture: picViewModel.target ?? picViewModel.pictures.first!)) {
                     Image(systemName: "puzzlepiece.extension")
                         .font(.largeTitle)
-                        .offset(x: 0, y: -25)
-                        .offset(y: moveUp ? -200 : 0)
-                        .animation(.easeInOut(duration: 3), value: moveUp)
+                        .frame(alignment: .center)
                         .foregroundStyle(pieceStyle)
+                        .offset(y: moveUp ? 0 : 200) // Animation moves the piece up
+                        .animation(.easeInOut(duration: 3), value: moveUp)
                 }
-                .disabled(false)
-                
-                NavigationLink(destination: HomeView()) {
-                    Text("Home")
-                }
-                .disabled(false)
+                .disabled(pieceDisabled)
+                .zIndex(1)
+                .offset(y: -200)
             }
             Spacer()
         }
