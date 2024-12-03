@@ -21,6 +21,7 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var shouldNavigateToLootView: Bool = false
 
     private let locationManager = CLLocationManager()
+    private var regionSet = false
     
     override init() {
         super.init()
@@ -56,12 +57,16 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
-        DispatchQueue.main.async {
-            self.region = MKCoordinateRegion(
-                center: location.coordinate,
-                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-            )
+        if !regionSet {
+            print("location change")
+            DispatchQueue.main.async {
+                self.region = MKCoordinateRegion(
+                    center: location.coordinate,
+                    span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                )
+            }
         }
+        regionSet = true
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
