@@ -11,7 +11,8 @@ import SwiftData
 struct PictureView: View {
     @Environment(\.modelContext) private var modelContext
     var picture: Picture
-    
+    @Environment(\.dismiss) private var dismiss
+
     var body: some View {
         VStack {
             ZStack {
@@ -21,8 +22,6 @@ struct PictureView: View {
                     .frame(width: 300, height: 300) // Fixed frame size
                     .clipped()
                 
-                Text(picture.name)
-                
                 // Overlay the grid with the collected pieces removed
                 ForEach(0..<10, id: \.self) { row in
                     ForEach(0..<10, id: \.self) { col in
@@ -31,12 +30,24 @@ struct PictureView: View {
                         if !picture.collected[row][col] {
                             // Show the grid piece if it's not collected
                             Rectangle()
-                                .fill(Color.black.opacity(0.5)) // Black grid overlay with some transparency. Do 1 for final
+                                .fill(Color.black.opacity(0.6)) // Black grid overlay with some transparency. Do 1 for final
                                 .frame(width: 30, height: 30)
                                 .position(
                                     x: CGFloat(col) * 30 + 15,  // Offset the x position
                                     y: CGFloat(row) * 30 + 15   // Offset the y position
                                 )
+                        }
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Image(systemName: "arrow.backward")
+                            Text("Collections")
                         }
                     }
                 }

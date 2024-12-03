@@ -47,7 +47,7 @@ struct PuzzleRow: View {
 
     var body: some View {
         // Wrapping everything inside a NavigationLink
-        NavigationLink(destination: PictureView(picture: picture)) {
+        NavigationLink(destination: PictureView(picture: picture).navigationBarBackButtonHidden(true)) {
             ZStack {
                 // Check if the image is available in the asset catalog
                 if let uiImage = UIImage(named: picture.pictureName) {
