@@ -14,50 +14,52 @@ struct RushView: View {
     @EnvironmentObject private var viewModel: RushViewModel
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Map(coordinateRegion: $viewModel.region,
-                    showsUserLocation: true,
-                    annotationItems: viewModel.selectedRoute?.waypoints ?? []) { waypoint in
-                    if viewModel.isWithinRadius(of: waypoint.coordinate) {
+    NavigationView {
+        VStack {
+            Map(coordinateRegion: $viewModel.region,
+                showsUserLocation: true,
+                annotationItems: viewModel.selectedRoute?.waypoints ?? []) { waypoint in
+                if viewModel.isWithinRadius(of: waypoint.coordinate) {
                     NavigationLink(destination: LootView()) {
                         MapPin(coordinate: waypoint.coordinate)
-                        }
-                    } else {
-                        MapPin(coordinate: waypoint.coordinate)
                     }
+                } else {
+                    MapPin(coordinate: waypoint.coordinate)
                 }
-                .frame(height: 300)
-                
-                Picker("Select a Route", selection: $viewModel.selectedRoute) {
-                    ForEach(viewModel.routes) { route in
-                        Text(route.name).tag(route as Route?)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
-                Button("Choose New Route") {
-                    viewModel.generateRandomRoutes()
-                }
-                .padding()
+            }
+            .frame(height: 300)
 
-                if let selectedRoute = viewModel.selectedRoute {
-                    ForEach(selectedRoute.waypoints, id: \.self) { waypoint in
+            Picker("Select a Route", selection: $viewModel.selectedRoute) {
+                ForEach(viewModel.routes) { route in
+                    Text(route.name).tag(route as Route?)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding()
+
+            Button("Choose New Route") {
+                viewModel.generateRandomRoutes()
+            }
+            .padding()
+
+            if let selectedRoute = viewModel.selectedRoute {
+                ForEach(selectedRoute.waypoints, id: \.self) { waypoint in
+                    if viewModel.isWithinRadius(of: waypoint.coordinate) {
                         NavigationLink(destination: LootView()) {
                             Text("Waypoint")
                         }
+                    } else {
+                        Text("Waypoint")
                     }
                 }
             }
-            .onAppear {
-                viewModel.loadRush()
-            }
+        }
+        .onAppear {
+            viewModel.loadRush()
         }
     }
+    }
 }
-
-
 #Preview {
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
