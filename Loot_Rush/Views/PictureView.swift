@@ -65,13 +65,13 @@ struct PictureView: View {
     }
 }
 
-#Preview {
-    do {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: Picture.self, configurations: config)
-        return PictureView(picture: PictureViewModel().pictures[0])
-             .modelContainer(container)
-    } catch {
-        fatalError("Failed to create model container.")
-    }
-}
+//#Preview {
+//    do {
+//        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+//        let container = try ModelContainer(for: Picture.self, configurations: config)
+//        return PictureView(picture: PictureViewModel().pictures[0])
+//             .modelContainer(container)
+//    } catch {
+//        fatalError("Failed to create model container.")
+//    }
+//}

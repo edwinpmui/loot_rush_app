@@ -20,7 +20,7 @@ struct LootView: View {
     @State private var boxDisabled: Bool = false
     @State private var pieceDisabled: Bool = true
     
-    @State private var selectedPicture: Picture? = nil
+    var picture: Picture
     
     var body: some View {
         VStack {
@@ -32,6 +32,8 @@ struct LootView: View {
             
             Spacer()
             
+            Text("\(picture.name)")
+            
             ZStack {
                 Button(action: generatePiece) {
                     Image("MysteryBox")
@@ -41,7 +43,7 @@ struct LootView: View {
                 }
                 .disabled(boxDisabled)
                 
-                NavigationLink(destination: PictureView(picture: picViewModel.target ?? picViewModel.pictures.first!).navigationBarBackButtonHidden(true)) {
+                NavigationLink(destination: PictureView(picture: picture).navigationBarBackButtonHidden(true)) {
                     Image(systemName: "puzzlepiece.extension")
                         .font(.largeTitle)
                         .frame(alignment: .center)
@@ -61,7 +63,9 @@ struct LootView: View {
     func generatePiece() {
         moveUp = true
         boxDisabled = true
-        displayText = "And your \(picViewModel.target?.name ?? "picture") piece is..."
+        displayText = "And your \(picture.name) piece is..."
+        picViewModel.setTarget(pic: picture)
+        print("\(picture.name)")
         resultText = "(Drumroll)"
         picViewModel.generatePiece()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -81,14 +85,14 @@ struct LootView: View {
     }
 }
 
-#Preview {
-    do {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: Picture.self, configurations: config)
-        return LootView()
-             .modelContainer(container)
-             .environmentObject(PictureViewModel())
-    } catch {
-        fatalError("Failed to create model container.")
-    }
-}
+//#Preview {
+//    do {
+//        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+//        let container = try ModelContainer(for: Picture.self, configurations: config)
+//        return LootView()
+//             .modelContainer(container)
+//             .environmentObject(PictureViewModel())
+//    } catch {
+//        fatalError("Failed to create model container.")
+//    }
+//}

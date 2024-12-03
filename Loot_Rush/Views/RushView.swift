@@ -12,18 +12,16 @@ import SwiftData
 struct RushView: View {
     @Environment(\.modelContext) private var modelContext
     @EnvironmentObject private var viewModel: RushViewModel
+    @EnvironmentObject private var picViewModel: PictureViewModel
     @Environment(\.dismiss) private var dismiss
+    @Query private var pictures: [Picture]
 
     var body: some View {
         VStack {
             Map(coordinateRegion: $viewModel.region,
                 interactionModes: .all, showsUserLocation: true, 
                 annotationItems: viewModel.selectedRoute?.waypoints ?? []) { waypoint in
-                if viewModel.isWithinRadius(of: waypoint.coordinate) {
-                    MapPin(coordinate: waypoint.coordinate)
-                } else {
-                    MapPin(coordinate: waypoint.coordinate)
-                }
+                MapPin(coordinate: waypoint.coordinate)
             }
             .frame(height: 300)
 
@@ -40,16 +38,15 @@ struct RushView: View {
             }
             .padding()
 
-            if let selectedRoute = viewModel.selectedRoute {
-                ForEach(selectedRoute.waypoints, id: \.self) { waypoint in
-                    if viewModel.isWithinRadius(of: waypoint.coordinate) {
-                        NavigationLink(destination: LootView()) {
-                            Text("Waypoint")
-                        }
-                    } else {
-                        Text("Waypoint")
-                    }
-                }
+            Button("Collect") {
+                viewModel.checkIfWithinRadius()
+            }
+            .padding()
+            
+            Text("\(pictures.count)")
+            
+            NavigationLink(destination: LootView(picture: pictures.randomElement()!), isActive: $viewModel.shouldNavigateToLootView) {
+                Text("Go to piece")
             }
         }
         .toolbar {
