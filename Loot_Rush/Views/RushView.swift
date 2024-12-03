@@ -14,32 +14,16 @@ struct RushView: View {
     @EnvironmentObject private var viewModel: RushViewModel
     @Environment(\.dismiss) private var dismiss
 
+    @State private var showAlert = false
+    @State private var selectedWaypoint: Waypoint?
+
     var body: some View {
         NavigationView {
             VStack {
                 Map(coordinateRegion: $viewModel.region,
                     showsUserLocation: true,
                     annotationItems: viewModel.selectedRoute?.waypoints ?? []) { waypoint in
-                    MapAnnotation(coordinate: waypoint.coordinate) {
-                        ZStack {
-                            MapPinView() // Your custom pin view
-                            if viewModel.isWithinRadius(of: waypoint.coordinate) {
-                                VStack {
-                                    Text("Use this location?")
-                                    HStack {
-                                        NavigationLink(destination: LootView()) {
-                                            Text("Yes")
-                                        }
-                                        Button("No") {
-                                            // Handle "No" action
-                                        }
-                                    }
-                                }
-                                .offset(x: 0, y: 60)
-                            }
-                        }
-                        .padding(.vertical, 60)
-                    }
+                    MapPin(coordinate: waypoint.coordinate, tint: .red)
                 }
                 .frame(height: 300)
 
@@ -59,11 +43,25 @@ struct RushView: View {
                 if let selectedRoute = viewModel.selectedRoute {
                     ForEach(selectedRoute.waypoints, id: \.self) { waypoint in
                         if viewModel.isWithinRadius(of: waypoint.coordinate) {
-                            NavigationLink(destination: LootView()) {
-                                Text("Waypoint")
+                            Button("Waypoint") {
+                                selectedWaypoint = waypoint
+                                showAlert = true
                             }
-                        } else {
-                            Text("Waypoint")
+                            .alert(isPresented: $showAlert) {
+                                Alert(
+                                    title: Text("Waypoint Reached"),
+                                    message: Text("You have reached a waypoint. Do you want to view the loot?"),
+                                    primaryButton: .default(Text("Yes")) {
+                                        // Navigate to LootView
+                                        if let selectedWaypoint = selectedWaypoint {
+                                            NavigationLink(destination: LootView()) {
+                                                EmptyView()
+                                            }.hidden()
+                                        }
+                                    },
+                                    secondaryButton: .cancel()
+                                )
+                            }
                         }
                     }
                 }
