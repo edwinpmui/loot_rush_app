@@ -16,7 +16,8 @@ struct RushView: View {
         center: CLLocationCoordinate2D(latitude: 39.95193335771201, longitude: -75.20110874816821),
         span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
     )
-    
+    @Environment(\.dismiss) private var dismiss
+
     var body: some View {
         NavigationView {
             VStack {
@@ -49,6 +50,18 @@ struct RushView: View {
                     ForEach(selectedRoute.waypoints, id: \.self) { waypoint in
                         NavigationLink(destination: LootView()) {
                             Text("Waypoint")
+                        }
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Image(systemName: "arrow.backward")
+                            Text("Home")
                         }
                     }
                 }

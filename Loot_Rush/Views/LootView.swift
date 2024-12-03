@@ -41,7 +41,7 @@ struct LootView: View {
                 }
                 .disabled(boxDisabled)
                 
-                NavigationLink(destination: PictureView(picture: picViewModel.target ?? picViewModel.pictures.first!)) {
+                NavigationLink(destination: PictureView(picture: picViewModel.target ?? picViewModel.pictures.first!).navigationBarBackButtonHidden(true)) {
                     Image(systemName: "puzzlepiece.extension")
                         .font(.largeTitle)
                         .offset(x: 0, y: -25)
