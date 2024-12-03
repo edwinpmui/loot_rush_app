@@ -26,7 +26,7 @@ struct HomeView: View {
                         .foregroundColor(.yellow)
                         .padding(.bottom, 50)
                     
-                    NavigationLink(destination: RushView()) {
+                    NavigationLink(destination: RushView().navigationBarBackButtonHidden(true)) {
                         Text("Rush")
                             .font(.headline)
                             .padding()
@@ -37,7 +37,7 @@ struct HomeView: View {
                             .shadow(radius: 5)
                     }
 
-                    NavigationLink(destination: CollectionView()) {
+                    NavigationLink(destination: CollectionView().navigationBarBackButtonHidden(true)) {
                         Text("Collection")
                             .font(.headline)
                             .padding()

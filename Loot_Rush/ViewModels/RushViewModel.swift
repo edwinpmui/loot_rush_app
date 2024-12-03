@@ -17,8 +17,8 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
     )
     @Published var location: CLLocation?
-    
     @Published var authorizationStatus: CLAuthorizationStatus?
+    @Published var shouldNavigateToLootView: Bool = false
 
     private let locationManager = CLLocationManager()
     
@@ -61,6 +61,7 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                 span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             )
             self.generateRandomRoutes()
+            self.checkIfWithinRadius()
         }
     }
     
@@ -95,5 +96,16 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         let waypointLocation = CLLocation(latitude: waypoint.latitude, longitude: waypoint.longitude)
         let distance = userLocation.distance(from: waypointLocation)
         return distance <= 100 // Radius in meters
+    }
+
+    func checkIfWithinRadius() {
+        guard let selectedRoute = selectedRoute else { return }
+        for waypoint in selectedRoute.waypoints {
+            if isWithinRadius(of: waypoint.coordinate) {
+                shouldNavigateToLootView = true
+                return
+            }
+        }
+        shouldNavigateToLootView = false
     }
 }

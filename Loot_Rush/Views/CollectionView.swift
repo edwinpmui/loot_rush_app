@@ -12,6 +12,7 @@ struct CollectionView: View {
     @Environment(\.modelContext) private var modelContext
     @EnvironmentObject var picViewModel: PictureViewModel
     @Query private var pictures: [Picture]
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         NavigationView {
@@ -24,6 +25,18 @@ struct CollectionView: View {
                 .padding()
             }
             .navigationTitle("Collection")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Image(systemName: "arrow.backward")
+                            Text("Home")
+                        }
+                    }
+                }
+            }
         }
     }
 }
