@@ -15,15 +15,12 @@ struct RushView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-    NavigationView {
         VStack {
             Map(coordinateRegion: $viewModel.region,
-                showsUserLocation: true,
+                interactionModes: .all, showsUserLocation: true, 
                 annotationItems: viewModel.selectedRoute?.waypoints ?? []) { waypoint in
                 if viewModel.isWithinRadius(of: waypoint.coordinate) {
-                    NavigationLink(destination: LootView()) {
-                        MapPin(coordinate: waypoint.coordinate)
-                    }
+                    MapPin(coordinate: waypoint.coordinate)
                 } else {
                     MapPin(coordinate: waypoint.coordinate)
                 }
@@ -54,23 +51,22 @@ struct RushView: View {
                     }
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        HStack {
-                            Image(systemName: "arrow.backward")
-                            Text("Home")
-                        }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    HStack {
+                        Image(systemName: "arrow.backward")
+                        Text("Home")
                     }
                 }
             }
-            .onAppear {
-                viewModel.loadRush()
-            }
         }
-    }
+        .onAppear {
+            viewModel.loadRush()
+        }
     }
 }
 #Preview {

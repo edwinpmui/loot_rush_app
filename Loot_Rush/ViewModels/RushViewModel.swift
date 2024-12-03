@@ -13,7 +13,7 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var selectedRoute: Route?
     @Published var routes: [Route] = []
     @Published var region: MKCoordinateRegion = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), // Default location
+        center: CLLocationCoordinate2D(latitude: -50, longitude: -22.4194), // Default location
         span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
     )
     @Published var location: CLLocation?
@@ -51,6 +51,7 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func requestLocation() {
         locationManager.requestLocation()
+        print(locationManager.location)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -60,8 +61,6 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                 center: location.coordinate,
                 span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             )
-            self.generateRandomRoutes()
-            self.checkIfWithinRadius()
         }
     }
     
@@ -89,6 +88,7 @@ class RushViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         ]
         
         selectedRoute = routes.randomElement()
+        print("Generated")
     }
     
     func isWithinRadius(of waypoint: CLLocationCoordinate2D) -> Bool {
