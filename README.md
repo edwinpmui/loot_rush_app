@@ -13,7 +13,7 @@ Views:
 
 ViewModels:
 - PictureViewModel
-  - Handles the loading of images, and generates the pieces collected for the image so that PictureView renders the right grid and CollectionView displays the correct numbers
+  - Handles the generation of the pieces collected for the image so that PictureView renders the right grid and CollectionView displays the correct numbers
 - RushViewModel
   - Handles getting current rush location, other location managers, detecting if the user is close to a route, and generating routes at random
 
@@ -24,7 +24,7 @@ Models:
   - Contains info about coordinates of Route destinations
 
 ### Course Concept 1
-We used data persistence to store the picture pieces collected and the route chosen
+We used data persistence to store the picture pieces collected
 
 ### Course Concept 2
 We used Core Location to track user location and enable users to finish routes
