@@ -11,16 +11,12 @@ import SwiftData
 
 struct RushView: View {
     @Environment(\.modelContext) private var modelContext
-    @StateObject private var viewModel = RushViewModel()
-    @State var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 39.95193335771201, longitude: -75.20110874816821),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    )
+    @EnvironmentObject private var viewModel: RushViewModel
     
     var body: some View {
         NavigationView {
             VStack {
-                Map(coordinateRegion: $region,
+                Map(coordinateRegion: $viewModel.region,
                     showsUserLocation: true,
                     annotationItems: viewModel.selectedRoute?.waypoints ?? []) { waypoint in
                     if viewModel.isWithinRadius(of: waypoint.coordinate) {
@@ -56,10 +52,6 @@ struct RushView: View {
             }
             .onAppear {
                 viewModel.loadRush()
-                if let location = viewModel.location {
-                    region.center = location.coordinate
-                    viewModel.generateRandomRoutes()
-                }
             }
         }
     }
@@ -67,5 +59,14 @@ struct RushView: View {
 
 
 #Preview {
-    RushView()
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Picture.self, configurations: config)
+        return RushView()
+             .modelContainer(container)
+             .environmentObject(RushViewModel())
+             .environmentObject(PictureViewModel())
+    } catch {
+        fatalError("Failed to create model container.")
+    }
 }
