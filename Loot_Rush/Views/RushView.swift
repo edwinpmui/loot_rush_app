@@ -13,7 +13,6 @@ struct RushView: View {
     @Environment(\.modelContext) private var modelContext
     @EnvironmentObject private var viewModel: RushViewModel
     @EnvironmentObject private var picViewModel: PictureViewModel
-    @Environment(\.dismiss) private var dismiss
     @Query private var pictures: [Picture]
 
     var body: some View {
@@ -51,9 +50,7 @@ struct RushView: View {
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
+                NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true)) {
                     HStack {
                         Image(systemName: "arrow.backward")
                         Text("Home")
