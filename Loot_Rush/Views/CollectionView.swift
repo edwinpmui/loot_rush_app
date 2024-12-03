@@ -12,24 +12,23 @@ struct CollectionView: View {
     @Environment(\.modelContext) private var modelContext
     @EnvironmentObject var picViewModel: PictureViewModel
     @Query private var pictures: [Picture]
-    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                    ForEach(pictures) { picture in
-                        PuzzleRow(picture: picture)
+            VStack {
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                        ForEach(pictures) { picture in
+                            PuzzleRow(picture: picture)
+                        }
                     }
+                    .padding()
+                    
                 }
-                .padding()
             }
-            .navigationTitle("Collection")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
+                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true)) {
                         HStack {
                             Image(systemName: "arrow.backward")
                             Text("Home")
@@ -38,6 +37,7 @@ struct CollectionView: View {
                 }
             }
         }
+        .navigationTitle("Collection")
     }
 }
 
